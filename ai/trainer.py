@@ -37,12 +37,10 @@ class Trainer(object):
             cv2.waitKey(1)
 
             if 'N' in keys:
-                cv2.destroyAllWindows()
                 print('TRAINER STOPPED WITHOUT FIT')
                 return False
 
             if 'M' in keys:
-                cv2.destroyAllWindows()
                 print('TRAINER STOPPED WITH FIT')
                 return True
 

@@ -5,7 +5,7 @@ from keyboard.misc import Input, InputI, KeyBdInput
 
 
 class OutputKeys(Enum):
-    W = 0x50
+    W = 0x11
     A = 0x1E
     S = 0x1F
     D = 0x20
@@ -30,7 +30,7 @@ class KeyboardIO(object):
 
     def press_keys(self, hex_codes):
         for hex_code in hex_codes:
-            self.press_key(hex_code)
+            self.press_key(hex_code.value)  # ENUM -> INT
 
     @staticmethod
     def press_key(hex_code):
@@ -42,7 +42,7 @@ class KeyboardIO(object):
 
     def release_keys(self, hex_codes):
         for hex_code in hex_codes:
-            self.release_key(hex_code)
+            self.release_key(hex_code.value)  # ENUM -> INT
 
     @staticmethod
     def release_key(hex_code):
